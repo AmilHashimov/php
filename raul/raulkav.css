@@ -1,0 +1,20 @@
+.raul{
+    color: purple;
+    font-size: 35px;
+    background: #080808;
+    text-align: center;
+}
+.raulyeke{
+
+    width: 100%;
+    height: 594px;
+    background: #080808;
+
+}
+
+.raul.raulito{
+    color: rgba(0, 0, 255, 0.32);
+    font-size: 40px;
+    background: #4cae4c;
+    text-align: center;
+}
