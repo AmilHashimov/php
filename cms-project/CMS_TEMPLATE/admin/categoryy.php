@@ -255,38 +255,16 @@ ob_start();
 
 
 						</form>
+						<?php
+						if (isset($_GET['edit'])){
+							$cat_id = $_GET['edit'];
+                            include "update_func.php";
 
-						<form action="" method="post">
-							<div class="form-group">
-								<label for="cat_title">Update Category</label>
+						}
 
-                                <?php
-                                if (isset($_GET['edit'])) {
-                                    $cat_id = $_GET['edit'];
-
-
-                                    $query = "SELECT * FROM category WHERE cat_id = '$cat_id'";
-                                    $select_category = mysqli_query($connection, $query);
-
-                                    while ($row = mysqli_fetch_assoc($select_category)) {
-                                        $cat_id = $row['cat_id'];
-                                        $cat_title = $row['cat_title'];
-
-									}
-
-                                    ?>
-									<input value="<?php if (isset($cat_title)) {
-										echo $cat_title;
-                                    } ?>" class="form-control" type="text" name="cat_title">
-                                <?php } ?>
-
-							</div>
-							<div class="form-group">
-								<input class="btn btn-primary" type="submit" name="submit" value="Edit">
-							</div>
+						?>
 
 
-						</form>
 
 					</div>
 
