@@ -1,4 +1,5 @@
 <?php
+include "../constants.php";
 global $connection;
 if (isset($_GET['p_id'])) {
     $the_post_id = $_GET['p_id'];
@@ -28,8 +29,21 @@ while ($row = mysqli_fetch_assoc($select_posts_by_id)) {
 	</div>
 
 	<div class="form-group">
-		<label for="title">Post Category Id</label>
-		<input value="<?php echo $post_category_id; ?>" type="text" class="form-control" name="post_category_id">
+		<select name="" id="">
+			<?php
+            $query = "SELECT * FROM category WHERE cat_id = '$cat_id'";
+            $select_category = mysqli_query($connection, $query);
+
+            while ($row = mysqli_fetch_assoc($select_category)) {
+                $cat_id = $row['cat_id'];
+                $cat_title = $row['cat_title'];
+            }
+
+
+			?>
+
+
+		</select>
 	</div>
 
 	<div class="form-group">
@@ -44,8 +58,9 @@ while ($row = mysqli_fetch_assoc($select_posts_by_id)) {
 
 	<div class="form-group">
 		<label for="title">Post Image</label>
-		<input value="<?php echo $post_image; ?>" type="file" class="form-control" name="image">
+		<img width="100" src="/cms-project/CMS_TEMPLATE/assets/<?php echo $post_image; ?>" >
 	</div>
+
 
 	<div class="form-group">
 		<label for="title">Post Tags</label>
@@ -54,8 +69,9 @@ while ($row = mysqli_fetch_assoc($select_posts_by_id)) {
 
 	<div class="form-group">
 		<label for="title">Post Content</label>
-		<textarea type="text" class="form-control" name="post_content" id="" cols="30" rows="10">
-			<?php echo $post_content; ?>
+		<textarea type="text" class="form-control" name="post_content" id="" cols="30"
+				  rows="10"><?php echo $post_content; ?>
+
 		</textarea>
 	</div>
 	<div class="form-group">
