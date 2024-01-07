@@ -1,6 +1,8 @@
 <?php
 global $connection;
 include "db1.php";
+
+
 ob_start();
 ?>
 <!DOCTYPE html>
@@ -172,10 +174,12 @@ ob_start();
 								class="fa fa-fw fa-arrows-v"></i> Posts <i class="fa fa-fw fa-caret-down"></i></a>
 					<ul id="posts" class="collapse">
 						<li>
-							<a href="http://localhost:63342/untitled/cms-project/CMS_TEMPLATE/admin/posts.php">View All Posts</a>
+							<a href="http://localhost:63342/untitled/cms-project/CMS_TEMPLATE/admin/posts.php">View All
+								Posts</a>
 						</li>
 						<li>
-							<a href="http://localhost:63342/untitled/cms-project/CMS_TEMPLATE/admin/posts.php?source=add_posts#">Add Posts</a>
+							<a href="http://localhost:63342/untitled/cms-project/CMS_TEMPLATE/admin/posts.php?source=add_posts#">Add
+								Posts</a>
 						</li>
 					</ul>
 				</li>
@@ -225,16 +229,16 @@ ob_start();
                     if (isset($_GET['source'])) {
                         $source = $_GET['source'];
 
-                    }else{
-						$source = "";
-					}
+                    } else {
+                        $source = "";
+                    }
                     switch ($source) {
                         case'add_posts';
                             include "add_posts.php";
                             break;
 
-                        case'100';
-                            echo "nice";
+                        case'edit_posts';
+                            include "edit_posts.php";
                             break;
 
                         case'200';
@@ -245,6 +249,7 @@ ob_start();
                             break;
 
                     }
+
 
                     ?>
 

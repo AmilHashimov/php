@@ -170,7 +170,8 @@
 							<a href="posts.php">View All Posts</a>
 						</li>
 						<li>
-							<a href="http://localhost:63342/untitled/cms-project/CMS_TEMPLATE/admin/posts.php?source=add_posts#">Add Posts</a>
+							<a href="http://localhost:63342/untitled/cms-project/CMS_TEMPLATE/admin/posts.php?source=add_posts#">Add
+								Posts</a>
 						</li>
 					</ul>
 				</li>

@@ -1,23 +1,24 @@
 <?php
-global$connection;
+global $connection;
+
 
 ?>
 <table class="table table-bordered table-hover">
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Author</th>
-        <th>Title</th>
-        <th>Category</th>
-        <th>Status</th>
-        <th>Image</th>
-        <th>Tags</th>
-        <th>Comments</th>
-        <th>Date</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
+	<thead>
+	<tr>
+		<th>Id</th>
+		<th>Author</th>
+		<th>Title</th>
+		<th>Category</th>
+		<th>Status</th>
+		<th>Image</th>
+		<th>Tags</th>
+		<th>Comments</th>
+		<th>Date</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
         <?php
         $query = "SELECT * FROM posts";
         $select_posts = mysqli_query($connection, $query);
@@ -38,10 +39,12 @@ global$connection;
             echo "<td>$post_title </td>";
             echo "<td>$post_category_id</td>";
             echo "<td>$post_status</td>";
-            echo "<td> <img  class='img-responsive '  width='100' src='edwindiaz.png' $post_image</td>";
+            echo "<td> <img  class='img-responsive '  width='100' src='/cms-project/CMS_TEMPLATE/assets/$post_image'  /></td>";
             echo "<td>$post_tags </td>";
             echo "<td>$post_comment_count </td>";
             echo "<td>$post_date </td>";
+            echo "<td><a href='posts.php?source=edit_posts&p_id={$post_id}'>Edit</a> </td>";
+            echo "<td><a href='posts.php?delete={$post_id}'>Delete</a> </td>";
             echo "</tr>";
 
 
@@ -49,15 +52,18 @@ global$connection;
 
 
         ?>
-        <td>10</td>
-        <td>Messi</td>
-        <td>Boostrap Cat</td>
-        <td>Boostrap</td>
-        <td>Status</td>
-        <td>Image</td>
-        <td>Tags</td>
-        <td>Comments</td>
-        <td>Date</td>
-    </tr>
-    </tbody>
+	</tr>
+	</tbody>
 </table>
+
+<?php
+if (isset($_GET['delete'])) {
+    $the_post_id = $_GET['delete'];
+    $query = "DELETE FROM posts WHERE post_id = '$the_post_id '";
+    $result = mysqli_query($connection, $query);
+
+
+}
+
+
+?>

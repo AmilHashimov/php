@@ -14,7 +14,7 @@ function createRows()
         $salt = "aKCY3v8O8AfyiO7CTfZQ8";
 
         $hashF_and_salt = $hashFormat . $salt;
-        $passwor = password_hash($salt,PASSWORD_BCRYPT);
+        $passwor = password_hash($salt, PASSWORD_BCRYPT);
 
         $query = "INSERT INTO users (username, password)  VALUES ('$user', '$passwor')";
         $mysql = mysqli_query($connection, $query);
@@ -66,4 +66,5 @@ function DeleteRows(): void
         }
     }
 }
+
 ?>

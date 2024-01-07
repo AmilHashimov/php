@@ -27,8 +27,12 @@ if (isset($_POST['update_cat'])) {
 <form action="" method="post">
 	<div class="form-group">
 		<label for="cat_title">Update Category</label>
-		<input value="<?php if (isset($cat_title)) { echo $cat_title; } ?>" class="form-control" type="text" name="cat_title">
-		<input type="hidden" name="cat_id" value="<?php if (isset($cat_id)) { echo $cat_id; } ?>">
+		<input value="<?php if (isset($cat_title)) {
+            echo $cat_title;
+        } ?>" class="form-control" type="text" name="cat_title">
+		<input type="hidden" name="cat_id" value="<?php if (isset($cat_id)) {
+            echo $cat_id;
+        } ?>">
 	</div>
 	<div class="form-group">
 		<input class="btn btn-primary" type="submit" name="update_cat" value="Edit">
