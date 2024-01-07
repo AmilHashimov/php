@@ -172,10 +172,10 @@ ob_start();
 								class="fa fa-fw fa-arrows-v"></i> Posts <i class="fa fa-fw fa-caret-down"></i></a>
 					<ul id="posts" class="collapse">
 						<li>
-							<a href="#">View All Posts</a>
+							<a href="http://localhost:63342/untitled/cms-project/CMS_TEMPLATE/admin/posts.php">View All Posts</a>
 						</li>
 						<li>
-							<a href="#">Add Posts</a>
+							<a href="http://localhost:63342/untitled/cms-project/CMS_TEMPLATE/admin/posts.php?source=add_posts#">Add Posts</a>
 						</li>
 					</ul>
 				</li>
