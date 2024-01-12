@@ -1,3 +1,10 @@
+<?php
+global $connection;
+include "db1.php";
+
+
+ob_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +19,7 @@
 	<title>SB Admin - Bootstrap Admin Template</title>
 
 	<!-- Bootstrap Core CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- Custom CSS -->
 	<link href="css/sb-admin.css" rel="stylesheet">
@@ -43,7 +50,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.php">SB Admin</a>
+			<a class="navbar-brand" href="index.html">SB Admin</a>
 		</div>
 		<!-- Top Menu Items -->
 		<ul class="nav navbar-right top-nav">
@@ -167,7 +174,8 @@
 								class="fa fa-fw fa-arrows-v"></i> Posts <i class="fa fa-fw fa-caret-down"></i></a>
 					<ul id="posts" class="collapse">
 						<li>
-							<a href="posts.php">View All Posts</a>
+							<a href="http://localhost:63342/untitled/cms-project/CMS_TEMPLATE/admin/posts.php">View All
+								Posts</a>
 						</li>
 						<li>
 							<a href="http://localhost:63342/untitled/cms-project/CMS_TEMPLATE/admin/posts.php?source=add_posts#">Add
@@ -217,35 +225,52 @@
 						Welcome to the Admin
 						<small>Mark Rikztski</small>
 					</h1>
+                    <?php
+                    if (isset($_GET['source'])) {
+                        $source = $_GET['source'];
+
+                    } else {
+                        $source = "";
+                    }
+                    switch ($source) {
+                        case'add_posts';
+                            include "add_posts.php";
+                            break;
+
+                        case'edit_posts';
+                            include "edit_posts.php";
+                            break;
+
+                        default:
+                            include "view-comments.php";
+                            break;
+
+                    }
 
 
-					<!--                        <ol class="breadcrumb">-->
-					<!--                            <li>-->
-					<!--                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>-->
-					<!--                            </li>-->
-					<!--                            <li class="active">-->
-					<!--                                <i class="fa fa-file"></i> Blank Page-->
-					<!--                            </li>-->
-					<!--                        </ol>-->
+                    ?>
+
+
 				</div>
+				<!-- /.row -->
+
 			</div>
-			<!-- /.row -->
+			<!-- /.container-fluid -->
 
 		</div>
-		<!-- /.container-fluid -->
+		<!-- /#page-wrapper -->
 
 	</div>
-	<!-- /#page-wrapper -->
+	<!-- /#wrapper -->
 
-</div>
-<!-- /#wrapper -->
+	<!-- jQuery -->
+	<script src="../js/jquery.js"></script>
 
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../js/bootstrap.min.js"></script>
 
 </body>
 
 </html>
+
+

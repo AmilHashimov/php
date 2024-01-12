@@ -164,7 +164,7 @@ ob_start();
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav side-nav">
 				<li>
-					<a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+					<a href="admin.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
 				</li>
 
 				<li>
@@ -172,19 +172,19 @@ ob_start();
 								class="fa fa-fw fa-arrows-v"></i> Posts <i class="fa fa-fw fa-caret-down"></i></a>
 					<ul id="posts" class="collapse">
 						<li>
-							<a href="#">View All Posts</a>
+							<a href="view_all_posts.php">View All Posts</a>
 						</li>
 						<li>
-							<a href="#">Add Posts</a>
+							<a href="add_posts.php">Add Posts</a>
 						</li>
 					</ul>
 				</li>
 				<li>
-					<a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Categories Page</a>
+					<a href="categoryy.php"><i class="fa fa-fw fa-wrench"></i> Categories Page</a>
 				</li>
 
 				<li class="active">
-					<a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Comments</a>
+					<a href="comments.php"><i class="fa fa-fw fa-file"></i> Comments</a>
 				</li>
 
 				<li>

@@ -184,11 +184,11 @@ ob_start();
 					</ul>
 				</li>
 				<li>
-					<a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Categories Page</a>
+					<a href="categoryy.php"><i class="fa fa-fw fa-wrench"></i> Categories Page</a>
 				</li>
 
 				<li class="active">
-					<a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Comments</a>
+					<a href="comments.php"><i class="fa fa-fw fa-file"></i> Comments</a>
 				</li>
 
 				<li>
