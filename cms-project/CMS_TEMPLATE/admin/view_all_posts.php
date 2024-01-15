@@ -51,7 +51,6 @@ global $connection;
             }
 
 
-
             echo "<td>$post_status</td>";
             echo "<td> <img  class='img-responsive '  width='100' src='/cms-project/CMS_TEMPLATE/assets/$post_image'  /></td>";
             echo "<td>$post_tags </td>";

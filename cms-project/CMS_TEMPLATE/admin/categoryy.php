@@ -255,15 +255,14 @@ ob_start();
 
 
 						</form>
-						<?php
-						if (isset($_GET['edit'])){
-							$cat_id = $_GET['edit'];
+                        <?php
+                        if (isset($_GET['edit'])) {
+                            $cat_id = $_GET['edit'];
                             include "update_func.php";
 
-						}
+                        }
 
-						?>
-
+                        ?>
 
 
 					</div>

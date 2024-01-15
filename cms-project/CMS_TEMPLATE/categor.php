@@ -11,26 +11,26 @@ include "db1.php";
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-    <title>Blog Home - Start Bootstrap Template</title>
+	<title>Blog Home - Start Bootstrap Template</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Bootstrap Core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="css/blog-home.css" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link href="css/blog-home.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
 
 </head>
 
@@ -38,21 +38,21 @@ include "db1.php";
 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.php">CMS</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+	<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.php">CMS</a>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
                 <?php
                 $query = "SELECT * FROM category";
                 $select_all_category_query = mysqli_query($connection, $query);
@@ -63,39 +63,39 @@ include "db1.php";
 
 
                 ?>
-                <li>
-                    <a href="http://localhost:63342/untitled/cms-project/CMS_TEMPLATE/admin/admin.php?_ijt=f9i11ihlnlk744k2bufe8qbf1v&_ij_reload=RELOAD_ON_SAVE">Admin</a>
-                </li>
-                <!--                    <li>-->
-                <!--                        <a href="#">Services</a>-->
-                <!--                    </li>-->
-                <!--                    <li>-->
-                <!--                        <a href="#">Contact</a>-->
-                <!--                    </li>-->
+				<li>
+					<a href="http://localhost:63342/untitled/cms-project/CMS_TEMPLATE/admin/admin.php?_ijt=f9i11ihlnlk744k2bufe8qbf1v&_ij_reload=RELOAD_ON_SAVE">Admin</a>
+				</li>
+				<!--                    <li>-->
+				<!--                        <a href="#">Services</a>-->
+				<!--                    </li>-->
+				<!--                    <li>-->
+				<!--                        <a href="#">Contact</a>-->
+				<!--                    </li>-->
 
 
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container -->
 </nav>
 
 <!-- Page Content -->
 <div class="container">
 
-    <div class="row">
+	<div class="row">
 
-        <!-- Blog Entries Column -->
-        <div class="col-md-8">
+		<!-- Blog Entries Column -->
+		<div class="col-md-8">
 
             <?php
 
-			if (isset($_GET['category'])){
+            if (isset($_GET['category'])) {
 
-				$post_category_id = $_GET['category'];
+                $post_category_id = $_GET['category'];
 
-			}
+            }
 
             $query = "SELECT * FROM posts WHERE post_category_id = '$post_category_id'";
             $select_all_posts_query = mysqli_query($connection, $query);
@@ -110,47 +110,47 @@ include "db1.php";
 
 
                 ?>
-                <h1 class="page-header">
-                    Page Heading
-                    <small>Secondary Text</small>
-                </h1>
-                <h2>
-                    <a href="post.php?p_id=<?php echo $post_id;?> "><?php echo $post_title; ?></a>
-                </h2>
-                <p class="lead">
-                    by <a href="index.php"><?php echo $post_author; ?></a>
-                </p>
-                <p><span class="glyphicon glyphicon-time"></span> <?php echo $post_date; ?></p>
-                <hr>
-                <img class="img-responsive" src="<?php echo $post_image; ?>" alt="">
-                <hr>
-                <p><?php echo $post_content; ?></p>
-                <a class="btn btn-primary" href="#">Read More <span
-                        class="glyphicon glyphicon-chevron-right"></span></a>
+				<h1 class="page-header">
+					Page Heading
+					<small>Secondary Text</small>
+				</h1>
+				<h2>
+					<a href="post.php?p_id=<?php echo $post_id; ?> "><?php echo $post_title; ?></a>
+				</h2>
+				<p class="lead">
+					by <a href="index.php"><?php echo $post_author; ?></a>
+				</p>
+				<p><span class="glyphicon glyphicon-time"></span> <?php echo $post_date; ?></p>
+				<hr>
+				<img class="img-responsive" src="<?php echo $post_image; ?>" alt="">
+				<hr>
+				<p><?php echo $post_content; ?></p>
+				<a class="btn btn-primary" href="#">Read More <span
+							class="glyphicon glyphicon-chevron-right"></span></a>
 
-                <hr>
+				<hr>
 
 
             <?php } ?>
 
 
-            <!-- First Blog Post -->
+			<!-- First Blog Post -->
 
 
-            <!-- Pager -->
-            <ul class="pager">
-                <li class="previous">
-                    <a href="#">&larr; Older</a>
-                </li>
-                <li class="next">
-                    <a href="#">Newer &rarr;</a>
-                </li>
-            </ul>
+			<!-- Pager -->
+			<ul class="pager">
+				<li class="previous">
+					<a href="#">&larr; Older</a>
+				</li>
+				<li class="next">
+					<a href="#">Newer &rarr;</a>
+				</li>
+			</ul>
 
-        </div>
+		</div>
 
-        <!-- Blog Sidebar Widgets Column -->
-        <div class="col-md-4">
+		<!-- Blog Sidebar Widgets Column -->
+		<div class="col-md-4">
             <?php
 
             if (isset($_POST['submit'])) {
@@ -172,35 +172,35 @@ include "db1.php";
             ?>
 
 
-            <!-- Blog Search Well -->
-            <div class="well">
-                <h4>Blog Search</h4>
-                <form action="search.php" method="post">
-                    <div class="input-group">
-                        <input type="text" name="search" class="form-control">
-                        <span class="input-group-btn">
+			<!-- Blog Search Well -->
+			<div class="well">
+				<h4>Blog Search</h4>
+				<form action="search.php" method="post">
+					<div class="input-group">
+						<input type="text" name="search" class="form-control">
+						<span class="input-group-btn">
                             <button name="submit" class="btn btn-default" type="submit">
                                 <span class="glyphicon glyphicon-search"></span>
                         </button>
                         </span>
-                    </div>
-                </form><!--search form->
+					</div>
+				</form><!--search form->
                     <!- /.input-group -->
-            </div>
+			</div>
 
 
-            <!-- Blog Categories Well -->
-            <div class="well">
+			<!-- Blog Categories Well -->
+			<div class="well">
 
                 <?php
                 $query = "SELECT * FROM category";
                 $select_category_sidebar = mysqli_query($connection, $query);
 
                 ?>
-                <h4>Blog Categories</h4>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <ul class="list-unstyled">
+				<h4>Blog Categories</h4>
+				<div class="row">
+					<div class="col-lg-6">
+						<ul class="list-unstyled">
 
                             <?php
                             while ($row = mysqli_fetch_assoc($select_category_sidebar)) {
@@ -209,51 +209,51 @@ include "db1.php";
                                 echo "<li><a href='categor.php?category=$cat_id'>{$cat_title}</a></li>";
                             }
                             ?>
-                        </ul>
-                    </div>
-                    <!-- /.col-lg-6 -->
-                    <div class="col-lg-6">
-                        <ul class="list-unstyled">
-                            <li><a href="#">Category Name</a>
-                            </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
-                            <li><a href="#">Category Name</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.col-lg-6 -->
-                </div>
-                <!-- /.row -->
-            </div>
+						</ul>
+					</div>
+					<!-- /.col-lg-6 -->
+					<div class="col-lg-6">
+						<ul class="list-unstyled">
+							<li><a href="#">Category Name</a>
+							</li>
+							<li><a href="#">Category Name</a>
+							</li>
+							<li><a href="#">Category Name</a>
+							</li>
+							<li><a href="#">Category Name</a>
+							</li>
+						</ul>
+					</div>
+					<!-- /.col-lg-6 -->
+				</div>
+				<!-- /.row -->
+			</div>
 
 
-            <!-- Side Widget Well -->
-            <div class="well">
-                <h4>Side Widget Well</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus
-                    laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
-            </div>
+			<!-- Side Widget Well -->
+			<div class="well">
+				<h4>Side Widget Well</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus
+					laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+			</div>
 
-        </div>
+		</div>
 
-    </div>
-    <!-- /.row -->
+	</div>
+	<!-- /.row -->
 
-    <hr>
+	<hr>
 
-    <!-- Footer -->
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright &copy; Your Website 2014</p>
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
-    </footer>
+	<!-- Footer -->
+	<footer>
+		<div class="row">
+			<div class="col-lg-12">
+				<p>Copyright &copy; Your Website 2014</p>
+			</div>
+			<!-- /.col-lg-12 -->
+		</div>
+		<!-- /.row -->
+	</footer>
 
 </div>
 <!-- /.container -->
