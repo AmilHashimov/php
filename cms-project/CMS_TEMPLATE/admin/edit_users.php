@@ -61,26 +61,18 @@ if (isset($_POST['update_post'])) {
 
 	<div class="form-group">
 		<label for="title">Post Category Id</label> <br>
-		<select name="post_category" id="">
+		<select name="user_role" id="">
 
             <?php
+            $query = "SELECT * FROM users";
+            $select_users = mysqli_query($connection, $query);
+            confirmQuery($select_users);
+            while ($row = mysqli_fetch_assoc($select_users)) {
+                $user_id = $row['user_id'];
+                $user_role = $row['user_role'];
 
-
-            $query = "SELECT * FROM category";
-            $select_category = mysqli_query($connection, $query);
-
-            confirmQuery($select_category);
-
-            while ($row = mysqli_fetch_assoc($select_category)) {
-                $cat_id = $row['cat_id'];
-                $cat_title = $row['cat_title'];
-
-                echo "<option value='$cat_id'>{$cat_title}</option>";
-
-
+                echo "<option value='$user_id'>{$user_role}</option>";
             }
-
-
             ?>
 
 
@@ -97,12 +89,12 @@ if (isset($_POST['update_post'])) {
 		<input value="<?php echo $post_status; ?>" type="text" class="form-control" name="post_status">
 	</div>
 
-	<div class="form-group">
-		<label for="title">Post Image</label>
-		<img width="100" src="/cms-project/CMS_TEMPLATE/assets/<?php echo $post_image; ?>">
-		<input type="file" class="form-control" name="image">
-	</div>
-    <?php echo $post_image; ?>
+<!--	<div class="form-group">-->
+<!--		<label for="title">Post Image</label>-->
+<!--		<img width="100" src="/cms-project/CMS_TEMPLATE/assets/--><?php //echo $post_image; ?><!--">-->
+<!--		<input type="file" class="form-control" name="image">-->
+<!--	</div>-->
+<!--    --><?php //echo $post_image; ?>
 
 
 	<div class="form-group">
@@ -121,3 +113,4 @@ if (isset($_POST['update_post'])) {
 		<input class="btn btn-primary" type="submit" name="update_post" value="Update Post">
 	</div>
 </form>
+

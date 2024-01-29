@@ -19,7 +19,7 @@ ob_start();
 	<title>SB Admin - Bootstrap Admin Template</title>
 
 	<!-- Bootstrap Core CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- Custom CSS -->
 	<link href="css/sb-admin.css" rel="stylesheet">
@@ -166,7 +166,7 @@ ob_start();
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav side-nav">
 				<li>
-					<a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+					<a href="admin.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
 				</li>
 
 				<li>
@@ -233,19 +233,16 @@ ob_start();
                         $source = "";
                     }
                     switch ($source) {
-                        case'add_posts';
-                            include "add_posts.php";
+                        case'add_users';
+                            include "add_users.php";
                             break;
 
-                        case'edit_posts';
-                            include "edit_posts.php";
+                        case'edit_users';
+                            include "edit_users.php";
                             break;
 
-                        case'200';
-                            echo "nice";
-                            break;
                         default:
-                            include "view_all_posts.php";
+                            include "view_all_users.php";
                             break;
 
                     }
@@ -267,13 +264,14 @@ ob_start();
 	<!-- /#wrapper -->
 
 	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
+	<script src="../js/jquery.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
 
 </body>
 
 </html>
+
 
 

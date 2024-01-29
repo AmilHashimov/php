@@ -179,7 +179,7 @@
 					<a href="categoryy.php"><i class="fa fa-fw fa-wrench"></i> Categories Page</a>
 				</li>
 
-				<li class="active">
+				<li class="">
 					<a href="comments.php"><i class="fa fa-fw fa-file"></i> Comments</a>
 				</li>
 
@@ -188,10 +188,10 @@
 								class="fa fa-fw fa-arrows-v"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
 					<ul id="demo" class="collapse">
 						<li>
-							<a href="#">Dropdown Item</a>
+							<a href="users.php">View All Users</a>
 						</li>
 						<li>
-							<a href="#">Dropdown Item</a>
+							<a href="users.php?source=add_users">Add Users</a>
 						</li>
 
 
