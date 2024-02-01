@@ -4,20 +4,24 @@ global $connection;
 
 ?>
 <table class="table table-bordered table-hover">
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Username</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-        <th>Role</th>
+	<thead>
+	<tr>
+		<th>Id</th>
+		<th>Username</th>
+		<th>Firstname</th>
+		<th>Lastname</th>
+		<th>Email</th>
+		<th>Role</th>
+		<th>Admin</th>
+		<th>Subscriber</th>
+		<th>Delete</th>
+		<th>Edit</th>
 
 
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
         <?php
         $query = "SELECT * FROM users";
         $select_posts = mysqli_query($connection, $query);
@@ -54,21 +58,22 @@ global $connection;
             echo "<td>$user_role</td>";
 
 
-//            $query = "SELECT *  FROM posts WHERE post_id = '$comment_post_id'";
-//            $select_post_id_query = mysqli_query($connection, $query);
-//            while ($row = mysqli_fetch_assoc($select_post_id_query)) {
-//                $post_id = $row['post_id'];
-//                $post_title = $row['post_title'];
+//            $query = "SELECT *  FROM users WHERE user_id = '$user_id'";
+//            $select_user_id_query = mysqli_query($connection, $query);
+//            while ($row = mysqli_fetch_assoc($select_user_id_query)) {
+//                $user_id = $row['user_id'];
+//                $username = $row['username'];
 //
-//                echo "<td><a href='../post.php?p_id=$post_id'>$post_title</a></td>";
+//                echo "<td><a href='../users.php?p_id=$user_id'>$username</a></td>";
 //
 //            }
 
 
-            echo "<td><a href='comments.php?approve={}'>Approve</a> </td>";
-            echo "<td><a href='comments.php?unapprove={}'>Unapprove</a> </td>";
+            echo "<td><a href='users.php?change_to_admin={$user_id}'>Admin</a> </td>";
+            echo "<td><a href='users.php?be_a_sub={$user_id}'>Subscriber</a> </td>";
 
-            echo "<td><a href='comments.php?delete={}'>Delete</a> </td>";
+            echo "<td><a href='users.php?delete={$user_id}'>Delete</a> </td>";
+            echo "<td><a href='users.php?source=edit_users&update_user={$user_id}'>Edit</a> </td>";
             echo "</tr>";
 
 
@@ -76,39 +81,35 @@ global $connection;
 
 
         ?>
-    </tr>
-    </tbody>
+	</tr>
+	</tbody>
 </table>
 
 <?php
 
-if (isset($_GET['approve'])) {
-    $the_comment_id = $_GET['approve'];
-    $query = "UPDATE comments SET comment_status = 'approved' WHERE comment_id = '$the_comment_id' ";
-    $approve_comment_query = mysqli_query($connection, $query);
-    header("location: comments.php");
+if (isset($_GET['change_to_admin'])) {
+    $the_user_id = $_GET['change_to_admin'];
+    $query = "UPDATE users SET user_role = 'Admin' WHERE user_id = '$the_user_id' ";
+    $change_admin_query = mysqli_query($connection, $query);
+    header("location: users.php");
 
 }
 
 
-
-
-if (isset($_GET['unapprove'])) {
-    $the_comment_id = $_GET['unapprove'];
-    $query = "UPDATE comments SET comment_status = 'unapproved' WHERE comment_id = '$the_comment_id' ";
-    $unapprove_comment_query = mysqli_query($connection, $query);
-    header("location: comments.php");
+if (isset($_GET['be_a_sub'])) {
+    $the_user_id = $_GET['be_a_sub'];
+    $query = "UPDATE users SET user_role = 'Subscriber' WHERE user_id = '$the_user_id' ";
+    $subscriber_query = mysqli_query($connection, $query);
+    header("location: users.php");
 
 }
-
-
 
 
 if (isset($_GET['delete'])) {
-    $the_comment_id = $_GET['delete'];
-    $query = "DELETE FROM comments WHERE comment_id = '$the_comment_id '";
+    $the_user_id = $_GET['delete'];
+    $query = "DELETE FROM users WHERE user_id = '$the_user_id '";
     $result = mysqli_query($connection, $query);
-    header("location: comments.php");
+    header("location: users.php");
 
 }
 

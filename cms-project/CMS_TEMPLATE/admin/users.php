@@ -199,7 +199,7 @@ ob_start();
 							<a href="users.php">View All Users</a>
 						</li>
 						<li>
-							<a href="users.php?source=add_user">Add Users</a>
+							<a href="users.php?source=add_users">Add Users</a>
 						</li>
 
 
