@@ -1,3 +1,16 @@
+<?php
+ob_start();
+session_start();
+
+if (isset($_SESSION['user_role'])){
+	if ($_SESSION['user_role'] == 'subscriber'){
+		header("Location: ../index.php");
+	}
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -215,7 +228,7 @@
 				<div class="col-lg-12">
 					<h1 class="page-header">
 						Welcome to the Admin
-						<small>Mark Rikztski</small>
+						<small><?php  echo $_SESSION['username'];?></small>
 					</h1>
 
 

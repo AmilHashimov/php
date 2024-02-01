@@ -1,6 +1,7 @@
 <?php
 global $connection;
 include "db1.php";
+session_start();
 
 
 ob_start();
@@ -223,7 +224,7 @@ ob_start();
 				<div class="col-lg-12">
 					<h1 class="page-header">
 						Welcome to the Admin
-						<small>Mark Rikztski</small>
+						<small><?php  echo $_SESSION['username'];?></small>
 					</h1>
                     <?php
                     if (isset($_GET['source'])) {
