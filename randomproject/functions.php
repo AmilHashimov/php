@@ -19,7 +19,7 @@ function createRows()
         $query = "INSERT INTO users (username, password)  VALUES ('$user', '$passwor')";
         $mysql = mysqli_query($connection, $query);
         if (!$mysql) {
-            die('QUERY FAILED' . mysqli_error());
+            die('QUERY FAILED' . mysqli_error($connection));
         }
     }
 }

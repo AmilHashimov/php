@@ -20,7 +20,7 @@ createRows();
 	<div class="boxs">
 		<p>Register</p>
 		<div class="col-sm-6">
-			<form action="heaven.php" method="post">
+			<form action="randomproject.php" method="post">
 				<div class="form-group">
 					<label for="username"></label>
 					<input type="text" name="username" class="form-control" placeholder="        Username">
@@ -30,7 +30,7 @@ createRows();
 					<input type="text" placeholder="         Password" name="password" class="form-control">
 				</div>
 				<div class="regs">
-					<input class="btn" type="submit" name="submit" value="Register">
+					<input class="btn btn-primary" type="submit" name="submit" value="Register">
 
 				</div>
 

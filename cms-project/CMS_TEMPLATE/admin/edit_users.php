@@ -94,8 +94,8 @@ if (isset($_POST['update_user'])) {
 
 	<div class="form-group">
 		<label for="title">Password</label>
-		<input type="text" class="form-control" name="user_password" id="" cols="30"
-			   rows="10"<?php echo $user_password; ?> >
+		<input type="password" class="form-control" name="user_password"
+			  <?php echo $user_password; ?> >
 
 
 	</div>

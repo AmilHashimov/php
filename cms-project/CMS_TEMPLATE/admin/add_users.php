@@ -80,5 +80,5 @@ if (isset($_POST['create_user'])) {
 		<div class="form-group">
 			<input class="btn btn-primary" type="submit" name="create_user" value="Add User">
 		</div>
-	</div>
+
 </form>

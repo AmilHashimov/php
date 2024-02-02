@@ -55,6 +55,7 @@ global $connection;
             echo "<td>$user_firstname</td>";
             echo "<td>$user_lastname</td>";
             echo "<td>$user_email</td>";
+
             echo "<td>$user_role</td>";
 
 
