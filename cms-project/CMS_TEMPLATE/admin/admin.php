@@ -150,7 +150,7 @@ if (!isset($_SESSION['user_role'])){
 				</ul>
 			</li>
 			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php  echo $_SESSION['username']; ?><b
 							class="caret"></b></a>
 				<ul class="dropdown-menu">
 					<li>
@@ -233,14 +233,14 @@ if (!isset($_SESSION['user_role'])){
 					</h1>
 
 
-					<!--                        <ol class="breadcrumb">-->
-					<!--                            <li>-->
-					<!--                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>-->
-					<!--                            </li>-->
-					<!--                            <li class="active">-->
-					<!--                                <i class="fa fa-file"></i> Blank Page-->
-					<!--                            </li>-->
-					<!--                        </ol>-->
+<!--					                        <ol class="breadcrumb">-->
+<!--					                            <li>-->
+<!--					                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>-->
+<!--					                            </li>-->
+<!--					                            <li class="active">-->
+<!--					                                <i class="fa fa-file"></i> Blank Page-->
+<!--					                            </li>-->
+<!--					                        </ol>-->
 				</div>
 			</div>
 			<!-- /.row -->
