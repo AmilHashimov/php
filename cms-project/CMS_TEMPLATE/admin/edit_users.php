@@ -48,7 +48,6 @@ if (isset($_POST['update_user'])) {
 
 
 }
-
 ?>
 <form action="" method="post" enctype="multipart/form-data">
 
@@ -64,19 +63,11 @@ if (isset($_POST['update_user'])) {
 	</div>
 
 	<select name="user_role" id="">
-		<option value="subscriber"><?php echo $user_role; ?></option>
-        <?php
-
-        if ($user_role == 'Admin') {
-            echo "<option value='Subscriber'>Subscriber</option>";
-
-        } else {
-
-            echo "<option value='Admin'>Admin</option>";
-        }
+		<option value='Admin' <?php $user_role == 'Admin' ?"selected" :  "" ?> > Admin</option>
+		<option value='Subscriber' <?php $user_role == 'Subscriber' ?"selected" :  "" ?> >Subscriber</option>
 
 
-        ?>
+
 
 
 	</select>

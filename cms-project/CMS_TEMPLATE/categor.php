@@ -122,7 +122,7 @@ include "db1.php";
 				</p>
 				<p><span class="glyphicon glyphicon-time"></span> <?php echo $post_date; ?></p>
 				<hr>
-				<img class="img-responsive" src="<?php echo $post_image; ?>" alt="">
+				<img class="img-responsive"src="/cms-project/CMS_TEMPLATE/assets/<?php echo $post_image; ?>" alt="">
 				<hr>
 				<p><?php echo $post_content; ?></p>
 				<a class="btn btn-primary" href="#">Read More <span
